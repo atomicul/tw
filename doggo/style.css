@@ -7,28 +7,6 @@
     height: 50vh;
 }
 
-#button {
-    background: none;
-    border: none;
-    padding: 0;
-    margin: 0;
-
-    color: inherit;
-    font-size: inherit;
-    font-family: inherit;
-    text-align: inherit;
-
-    cursor: pointer;
-    outline: none;
-}
-
-#audio {
-    position: fixed;
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
 body {
     display: grid;
     height: 100svh;
@@ -36,40 +14,36 @@ body {
     margin: 0;
     place-items: center;
     color: white;
+    animation: clubFlicker 0.5s infinite steps(1, end);
 } 
 
-body.animation-active {
-    animation: clubFlicker 0.5s infinite steps(1, end);
-}
-
 @media (prefers-reduced-motion: reduce) {
-    body,
-    body.animation-active {
+    body {
         animation: none;
         background-color: #333;
     }
 } 
 
 @keyframes clubFlicker {
-            0% {
-                background-color: #FF0000; /* Red */
-            }
-            16.6% {
-                background-color: #FF7F00; /* Orange */
-            }
-            33.3% {
-                background-color: #FFFF00; /* Yellow */
-            }
-            50% {
-                background-color: #00FF00; /* Green */
-            }
-            66.6% {
-                background-color: #0000FF; /* Blue */
-            }
-            83.3% {
-                background-color: #8B00FF; /* Violet */
-            }
-            100% {
-                background-color: #FF0000; /* Back to Red */
-            }
-        }
+    0% {
+        background-color: #FF0000; /* Red */
+    }
+    16.6% {
+        background-color: #FF7F00; /* Orange */
+    }
+    33.3% {
+        background-color: #FFFF00; /* Yellow */
+    }
+    50% {
+        background-color: #00FF00; /* Green */
+    }
+    66.6% {
+        background-color: #0000FF; /* Blue */
+    }
+    83.3% {
+        background-color: #8B00FF; /* Violet */
+    }
+    100% {
+        background-color: #FF0000; /* Back to Red */
+    }
+}

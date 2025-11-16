@@ -2,7 +2,7 @@
     max-height: 80%;
     max-width: 80%;
 
-    height: 64vh;
+    height: 50vh;
 }
 
 #button {
@@ -29,23 +29,20 @@
 
 body {
     display: grid;
-    margin: 0;
     height: 100svh;
+    overflow: hidden;
+    margin: 0;
     place-items: center;
+    color: white;
 } 
 
-body {
+body.animation-active {
     animation: clubFlicker 0.5s infinite steps(1, end);
-
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
 }
 
 @media (prefers-reduced-motion: reduce) {
-    body {
+    body,
+    body.animation-active {
         animation: none;
         background-color: #333;
     }

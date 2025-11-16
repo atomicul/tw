@@ -4,25 +4,22 @@
   <meta charset="utf-8">
   <title>Dance till you're dead</title>
   <link href="style.css" rel="stylesheet" />
+  <script src="script.js" defer></script>
   <link type="image/png" sizes="16x16" rel="icon" href="favicon16.png">
   <link type="image/png" sizes="32x32" rel="icon" href="favicon32.png">
   <link type="image/png" sizes="96x96" rel="icon" href="favicon96.png">
 </head>
 <body>
-    <button id="button">
-        <img id="dog" src="./doggo.gif" />
+    <button id="button" onclick="play()">
+        <img
+            id="dog"
+            src="doggo.webp"
+            data-animated="doggo.gif"
+            alt="An animation (click to play)"
+        />
     </button>
-    <audio id="audio" autoplay loop controls>
+    <audio id="audio" autoplay loop>
         <source src="./sound.mp3" type="audio/mpeg">
     </audio>
-    <script>
-        function play() {
-            const audio = document.getElementById('audio');
-            audio.volume = 0.2;
-            audio.play()
-                .then(() => console.log("played"))
-                .catch((err) => console.log(err))
-        }
-    </script>
 </body>
 </html>

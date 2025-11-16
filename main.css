@@ -13,6 +13,7 @@
   --color-danger-light: #dc3545;
   --shadow-sm-light: 0 1px 3px rgba(0, 0, 0, 0.05);
   --shadow-md-light: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --logo-url-light: url('/logo-light.png');
 
   --color-primary-dark: #3395ff;
   --color-primary-hover-dark: #5ea9ff;
@@ -28,6 +29,7 @@
   --color-danger-dark: #e54857;
   --shadow-sm-dark: 0 1px 3px rgba(0, 0, 0, 0.15);
   --shadow-md-dark: 0 4px 12px rgba(0, 0, 0, 0.2);
+  --logo-url-dark: url('/logo-dark.png');
 
   --color-primary: var(--color-primary-light);
   --color-primary-hover: var(--color-primary-hover-light);
@@ -43,6 +45,7 @@
   --color-danger: var(--color-danger-light);
   --shadow-sm: var(--shadow-sm-light);
   --shadow-md: var(--shadow-md-light);
+  --logo-url: var(--logo-url-light)
 }
 
 [data-theme="dark"] {
@@ -60,6 +63,7 @@
   --color-danger: var(--color-danger-dark);
   --shadow-sm: var(--shadow-sm-dark);
   --shadow-md: var(--shadow-md-dark);
+  --logo-url: var(--logo-url-dark)
 }
 
 @media (prefers-color-scheme: dark) {
@@ -78,6 +82,7 @@
     --color-danger: var(--color-danger-dark);
     --shadow-sm: var(--shadow-sm-dark);
     --shadow-md: var(--shadow-md-dark);
+    --logo-url: var(--logo-url-dark)
   }
 }
 

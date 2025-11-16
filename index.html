@@ -1,25 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Dance till you're dead</title>
-  <link href="style.css" rel="stylesheet" />
-  <script src="script.js" defer></script>
-  <link type="image/png" sizes="16x16" rel="icon" href="favicon16.png">
-  <link type="image/png" sizes="32x32" rel="icon" href="favicon32.png">
-  <link type="image/png" sizes="96x96" rel="icon" href="favicon96.png">
-</head>
-<body>
-    <button id="button" onclick="play()">
-        <img
-            id="dog"
-            src="doggo.webp"
-            data-animated="doggo.gif"
-            alt="An animation (click to play)"
-        />
-    </button>
-    <audio id="audio" autoplay loop>
-        <source src="./sound.mp3" type="audio/mpeg">
-    </audio>
-</body>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Memestalgia</title>
+        <link href="style.css" rel="stylesheet" />
+        <script src="script.js" defer></script>
+        <link type="image/png" sizes="16x16" rel="icon" href="/favicon16.png">
+        <link type="image/png" sizes="32x32" rel="icon" href="/favicon32.png">
+        <link type="image/png" sizes="96x96" rel="icon" href="/favicon96.png">
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="#" class="nav-brand">Memestalgia</a>
+
+                <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+                    &#9776;
+                </button>
+
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-links">
+                        <li><a href="home/" target="content-frame">Home</a></li>
+                        <li><a href="doggo/" target="content-frame">???</a></li>
+                    </ul>
+                    <button id="theme-toggle" class="theme-button" onclick="themeToggle.cycleTheme()">System</button>
+                </div>
+            </div>
+        </nav>
+
+        <iframe 
+            name="content-frame" 
+            src="doggo/" 
+            class="content-frame"
+            title="Main content"
+        >
+        </iframe>
+    </body>
 </html>

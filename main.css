@@ -1,0 +1,104 @@
+:root {
+  --color-primary-light: #007bff;
+  --color-primary-hover-light: #0056b3;
+  --color-secondary-light: #6c757d;
+  --color-accent-light: #fd7e14;
+  --color-text-light: #212529;
+  --color-text-muted-light: #6c757d;
+  --color-background-light: #ffffff;
+  --color-surface-light: #f8f9fa;
+  --color-border-light: #dee2e6;
+  --color-success-light: #28a745;
+  --color-warning-light: #ffc107;
+  --color-danger-light: #dc3545;
+  --shadow-sm-light: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md-light: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  --color-primary-dark: #3395ff;
+  --color-primary-hover-dark: #5ea9ff;
+  --color-secondary-dark: #868e96;
+  --color-accent-dark: #ff9a40;
+  --color-text-dark: #e9ecef;
+  --color-text-muted-dark: #868e96;
+  --color-background-dark: #121212;
+  --color-surface-dark: #1e1e1e;
+  --color-border-dark: #495057;
+  --color-success-dark: #30c050;
+  --color-warning-dark: #ffcd39;
+  --color-danger-dark: #e54857;
+  --shadow-sm-dark: 0 1px 3px rgba(0, 0, 0, 0.15);
+  --shadow-md-dark: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+  --color-primary: var(--color-primary-light);
+  --color-primary-hover: var(--color-primary-hover-light);
+  --color-secondary: var(--color-secondary-light);
+  --color-accent: var(--color-accent-light);
+  --color-text: var(--color-text-light);
+  --color-text-muted: var(--color-text-muted-light);
+  --color-background: var(--color-background-light);
+  --color-surface: var(--color-surface-light);
+  --color-border: var(--color-border-light);
+  --color-success: var(--color-success-light);
+  --color-warning: var(--color-warning-light);
+  --color-danger: var(--color-danger-light);
+  --shadow-sm: var(--shadow-sm-light);
+  --shadow-md: var(--shadow-md-light);
+}
+
+[data-theme="dark"] {
+  --color-primary: var(--color-primary-dark);
+  --color-primary-hover: var(--color-primary-hover-dark);
+  --color-secondary: var(--color-secondary-dark);
+  --color-accent: var(--color-accent-dark);
+  --color-text: var(--color-text-dark);
+  --color-text-muted: var(--color-text-muted-dark);
+  --color-background: var(--color-background-dark);
+  --color-surface: var(--color-surface-dark);
+  --color-border: var(--color-border-dark);
+  --color-success: var(--color-success-dark);
+  --color-warning: var(--color-warning-dark);
+  --color-danger: var(--color-danger-dark);
+  --shadow-sm: var(--shadow-sm-dark);
+  --shadow-md: var(--shadow-md-dark);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-primary: var(--color-primary-dark);
+    --color-primary-hover: var(--color-primary-hover-dark);
+    --color-secondary: var(--color-secondary-dark);
+    --color-accent: var(--color-accent-dark);
+    --color-text: var(--color-text-dark);
+    --color-text-muted: var(--color-text-muted-dark);
+    --color-background: var(--color-background-dark);
+    --color-surface: var(--color-surface-dark);
+    --color-border: var(--color-border-dark);
+    --color-success: var(--color-success-dark);
+    --color-warning: var(--color-warning-dark);
+    --color-danger: var(--color-danger-dark);
+    --shadow-sm: var(--shadow-sm-dark);
+    --shadow-md: var(--shadow-md-dark);
+  }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+h1, h2, h3 {
+    color: var(--color-primary);
+}
+
+p {
+    color: var(--color-text);
+    margin-bottom: 1rem;
+}

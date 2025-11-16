@@ -1,38 +1,33 @@
-const audio = document.getElementById('audio');
-const body = {
-    animate: function() {
-        document.body.classList.add('animation-active')
-    }
+const menuToggle = document.getElementById('menu-toggle')
+const navMenu = document.getElementById('nav-menu')
+const iframe = document.querySelector('iframe')
+
+menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('is-active')
+})
+
+const themeToggle = {
+    themes: ['light', 'dark', 'system'],
+    get currentTheme() { return localStorage.getItem('theme') || 'system' },
+    set currentTheme(theme) {
+        localStorage.setItem('theme', theme);
+        this.updateUi(); 
+    },
+    updateUi: function() {
+        document.documentElement.setAttribute('data-theme', this.currentTheme)
+        iframe.contentWindow.document.documentElement
+            .setAttribute('data-theme', this.currentTheme)
+
+        this.element.textContent = 
+            this.currentTheme.charAt(0).toUpperCase() +
+            this.currentTheme.slice(1)
+    },
+    cycleTheme: function() {
+        const currentIndex = this.themes.indexOf(this.currentTheme)
+        const nextIndex = (currentIndex + 1) % this.themes.length
+        this.currentTheme = this.themes[nextIndex]
+    },
+    get element() { return document.getElementById('theme-toggle') },
 }
 
-const gif = {
-    get element() {
-        return document.getElementById('dog')
-    },
-    get animatedSrc() {
-        return this.element.dataset.animated
-    },
-    preload: function() {
-        const img = new Image()
-        img.src = this.animatedSrc
-    },
-    animate: function() {
-        this.element.src = this.animatedSrc
-    }
-
-}
-
-gif.preload()
-
-function play() {
-    const afterPlay = () => {
-        gif.animate();
-        body.animate();
-    }
-
-    audio.volume = 1;
-    audio.play()
-        .then(afterPlay)
-}
-
-play()
+iframe.onload = () => themeToggle.updateUi();

@@ -84,6 +84,10 @@ body {
 
 .title {
   position: relative;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .title::before {
@@ -97,7 +101,7 @@ body {
 }
 
 .card:nth-child(even) > .info > .title {
-  text-align: right;
+    flex-direction: row-reverse;
 }
 
 .card:nth-child(odd) > .info > .title::before {

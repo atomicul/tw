@@ -1,5 +1,5 @@
 :root {
-  --color-primary-light: #007bff;
+  --color-primary-light: #418faa;
   --color-primary-hover-light: #0056b3;
   --color-secondary-light: #6c757d;
   --color-accent-light: #fd7e14;
@@ -15,7 +15,7 @@
   --shadow-md-light: 0 4px 12px rgba(0, 0, 0, 0.08);
   --logo-url-light: url('/logo-light.png');
 
-  --color-primary-dark: #3395ff;
+  --color-primary-dark: #6aa6bd;
   --color-primary-hover-dark: #5ea9ff;
   --color-secondary-dark: #868e96;
   --color-accent-dark: #ff9a40;
@@ -86,8 +86,14 @@
   }
 }
 
+@font-face {
+  font-family: pixeloid;
+  src: url('/pixeloid-mono.ttf');
+}
+
 * {
     box-sizing: border-box;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 }
 
 body {
@@ -96,7 +102,6 @@ body {
     line-height: 1.6;
     background-color: var(--color-background);
     color: var(--color-text);
-    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 h1, h2, h3 {

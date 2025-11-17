@@ -7,8 +7,12 @@ menuToggle.addEventListener('click', () => {
 })
 
 const themeToggle = {
-    themes: ['light', 'dark', 'system'],
-    get currentTheme() { return localStorage.getItem('theme') || 'system' },
+    get currentTheme() { 
+        return localStorage.getItem('theme') || 
+            (window.matchMedia('(prefers-color-scheme: dark)').matches 
+                ? 'dark' 
+                : 'light')
+    },
     set currentTheme(theme) {
         localStorage.setItem('theme', theme);
         this.updateUi(); 
@@ -18,16 +22,18 @@ const themeToggle = {
         iframe.contentWindow.document.documentElement
             .setAttribute('data-theme', this.currentTheme)
 
-        this.element.textContent = 
-            this.currentTheme.charAt(0).toUpperCase() +
-            this.currentTheme.slice(1)
+        this.icon.innerText = {
+            dark: "sunny", 
+            light: "bedtime"
+        }[this.currentTheme]
     },
     cycleTheme: function() {
-        const currentIndex = this.themes.indexOf(this.currentTheme)
-        const nextIndex = (currentIndex + 1) % this.themes.length
-        this.currentTheme = this.themes[nextIndex]
+        this.currentTheme = this.currentTheme === 'dark' ? 'light' : 'dark'
     },
-    get element() { return document.getElementById('theme-toggle') },
+    get icon() { return document.querySelector('#theme-toggle span') },
 }
 
+requestAnimationFrame(() => themeToggle.updateUi());
+setTimeout(() => themeToggle.updateUi(), 500);
+setTimeout(() => themeToggle.updateUi(), 1000);
 iframe.onload = () => themeToggle.updateUi();

@@ -57,7 +57,8 @@ body {
     padding: 0.5rem 0;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.theme-button:hover {
     color: var(--color-primary);
 }
 

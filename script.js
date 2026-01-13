@@ -37,3 +37,17 @@ requestAnimationFrame(() => themeToggle.updateUi());
 setTimeout(() => themeToggle.updateUi(), 500);
 setTimeout(() => themeToggle.updateUi(), 1000);
 iframe.onload = () => themeToggle.updateUi();
+
+document.addEventListener('keydown', (event) => {
+    const target = event.target;
+    const isInput = target.matches('input, textarea') || target.isContentEditable;
+    const contentIframe = document.querySelector('iframe');
+
+    if (isInput) {
+        return;
+    }
+
+    if (event.key === '?') {
+        contentIframe.contentWindow.location.href = 'doggo/';
+    }
+});

@@ -112,3 +112,16 @@ body {
   right: -45px;
 }
 
+.info img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+.card iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  position: relative;
+  z-index: 2000;
+}

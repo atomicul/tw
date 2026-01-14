@@ -19,8 +19,10 @@ const themeToggle = {
     },
     updateUi: function() {
         document.documentElement.setAttribute('data-theme', this.currentTheme)
-        iframe.contentWindow.document.documentElement
+        if (iframe.contentWindow) {
+             iframe.contentWindow.document.documentElement
             .setAttribute('data-theme', this.currentTheme)
+        }
 
         this.icon.innerText = {
             dark: "sunny", 
@@ -106,6 +108,15 @@ function handleLogin() {
     const name = usernameInput.value.trim();
     if (!name) return;
 
+    // Regex: Allow Alphanumeric, spaces, underscores, and hyphens only
+    const nameRegex = /^[a-zA-Z0-9\s_-]+$/;
+
+    if (!nameRegex.test(name)) {
+        usernameInput.classList.add('input-error');
+        alert("Please use only letters, numbers, spaces, hyphens, or underscores.");
+        return;
+    }
+
     localStorage.setItem(STORAGE_KEY_USER, name);
 
     localStorage.setItem(STORAGE_KEY_STREAK, 1);
@@ -139,6 +150,11 @@ clearBtn.addEventListener('click', handleClear);
 
 usernameInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') handleLogin();
+});
+
+// Remove error styling when user starts typing to correct the mistake
+usernameInput.addEventListener('input', () => {
+    usernameInput.classList.remove('input-error');
 });
 
 initSession();

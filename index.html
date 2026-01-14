@@ -42,5 +42,21 @@
             title="Main content"
         >
         </iframe>
+
+            <footer class="app-footer">
+                <div id="login-container" class="footer-content">
+                    <span class="footer-label">Join the club:</span>
+                    <input type="text" id="username-input" placeholder="Enter your name" maxlength="20">
+                    <button id="login-btn" class="action-btn">Start</button>
+                </div>
+
+                <div id="session-container" class="footer-content hidden">
+                    <span class="footer-text">
+                        Welcome back, <span id="display-name" class="highlight-text">User</span>! 
+                        🔥 Streak: <span id="streak-count" class="highlight-text">1</span> day(s)
+                    </span>
+                    <button id="clear-btn" class="action-btn outline">Clear Session</button>
+                </div>
+            </footer>
     </body>
 </html>

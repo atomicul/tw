@@ -120,3 +120,87 @@ body {
         gap: 1rem;
     }
 }
+
+.app-footer {
+    width: 100%;
+    background-color: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    padding: 0.75rem 1rem;
+    box-shadow: var(--shadow-sm);
+    flex-shrink: 0;
+    font-family: pixeloid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.footer-content {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.footer-label, .footer-text {
+    color: var(--color-text);
+}
+
+.highlight-text {
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+#username-input {
+    padding: 0.3rem 0.5rem;
+    border: 2px solid var(--color-border);
+    background: var(--color-background);
+    color: var(--color-text);
+    border-radius: 4px;
+    font-family: inherit;
+    outline: none;
+}
+
+#username-input:focus {
+    border-color: var(--color-primary);
+}
+
+.action-btn {
+    padding: 0.3rem 1rem;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.action-btn:hover {
+    background-color: var(--color-primary-hover);
+}
+
+.action-btn.outline {
+    background-color: transparent;
+    border: 2px solid var(--color-danger);
+    color: var(--color-danger);
+}
+
+.action-btn.outline:hover {
+    background-color: var(--color-danger);
+    color: white;
+}
+
+@media (max-width: 40rem) {
+    .footer-content {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}

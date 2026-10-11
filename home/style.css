@@ -67,8 +67,7 @@ body {
   border-bottom-right-radius: 0;
 }
 
-.card iframe {
-    aspect-ratio: 16/9;
+.card lite-youtube {
     position: relative;
     z-index: 2000;
 }
